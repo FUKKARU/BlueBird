@@ -35,6 +35,9 @@ namespace Talk
         #endregion
 
         [Header("テキスト一覧")] public List<TextTable> Texts = new List<TextTable>();
+        [Header("テキストを表示するスピード\n（＝何秒ごとに文字を更新するか）")] public float CharsShowInterval;
+        [Header("新しい行を表示し始めて何秒経ったらスキップ可能にするか")] public float SkipTime;
+        [Header("文字送りのSE")] public AudioClip CaptionSE;
 
         public string GetText(string sceneName)
         {
