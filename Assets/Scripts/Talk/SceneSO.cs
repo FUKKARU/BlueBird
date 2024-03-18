@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Talk
@@ -32,6 +34,26 @@ namespace Talk
         }
         #endregion
 
-        [Header("Talkシーン")] public string[] TalkSceneNames;
+        [Header("テキスト一覧")] public List<TextTable> Texts = new List<TextTable>();
+
+        public string GetText(string sceneName)
+        {
+            foreach (TextTable textTable in Texts)
+            {
+                if (textTable.SceneName == sceneName)
+                {
+                    return textTable.Text;
+                }
+            }
+
+            return "テキストの取得失敗";
+        }
+    }
+
+    [Serializable]
+    public class TextTable
+    {
+        [Header("シーン名")] public string SceneName;
+        [Header("テキスト")][TextArea(1, 1000)] public string Text;
     }
 }

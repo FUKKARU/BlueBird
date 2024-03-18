@@ -12,8 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca445dcb70596fc4abab8f85df3ba752, type: 3}
   m_Name: SceneSO
   m_EditorClassIdentifier: 
-  talkSceneNames:
-  - StartTalk
-  - PawnBattleTalk
-  - BossBattleTalk
-  - EndTalk
+  Texts:
+  - SceneName: StartTalk
+    Text: 1
+  - SceneName: PawnBattleTalk
+    Text: '2
+
+      2'
+  - SceneName: BossBattleTalk
+    Text: '3
+
+      3
+
+      3'
+  - SceneName: EndTalk
+    Text: '4
+
+      4
+
+      4
+
+      4'
