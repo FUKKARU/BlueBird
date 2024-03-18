@@ -12,7 +12,7 @@ namespace Battle
         {
             Vector2 screenPos = RectTransformUtility.WorldToScreenPoint(Camera.main, transform.position);
 
-            if (screenPos.x <= -2400)
+            if (screenPos.x <= -300)
                 transform.position = Vector3.zero;
         }
 
