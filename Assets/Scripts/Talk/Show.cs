@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Talk
 {
     public class Show : MonoBehaviour
     {
+        [SerializeField] Image textIcon;
         TextMeshProUGUI textComp;
         AudioSource audioSource;
         string sceneName;
@@ -28,13 +30,19 @@ namespace Talk
 
             // テキストの取得
             GetText_Split_CalcRowNum();
+
+            isClickable = false;
+            textIcon.enabled = false;
+            ShowText(1);
         }
 
         void Update()
         {
-            if (isClickable && Input.GetKeyDown(KeyCode.Space))
+            if (isClickable && Input.GetMouseButtonDown(0))
             {
                 isClickable=false;
+
+                textIcon.enabled = false;
 
                 if (nowRow <= rowLen)
                 {
@@ -47,7 +55,7 @@ namespace Talk
                 }
             }
 
-            if (isSkipable && Input.GetKeyDown(KeyCode.Return))
+            if (isSkipable && Input.GetMouseButtonDown(0))
             {
                 isSkipable = false;
 
@@ -56,6 +64,7 @@ namespace Talk
                     if (showCharsCor != null) StopCoroutine(showCharsCor);
                     showCharsCor = null;
 
+                    // textIcon.enabled = false;
                     audioSource.Stop();
 
                     textComp.text = text[nowRow - 1];
@@ -101,6 +110,7 @@ namespace Talk
             if (countSkipTimeCor != null) StopCoroutine(countSkipTimeCor);
             countSkipTimeCor = null;
 
+            textIcon.enabled = true;
             audioSource.Stop();
 
             nowRow++;
@@ -111,6 +121,8 @@ namespace Talk
         {
             yield return new WaitForSeconds(time);
             isSkipable = true;
+
+            textIcon.enabled = true;
         }
     }
 }

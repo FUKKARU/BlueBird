@@ -272,7 +272,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9e9dc1c33373454b90662d7d50f6b09, type: 3}
---- !u!1001 &2953623406390529770
+--- !u!114 &1094773621179998487 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1562576711381802121, guid: 0e0e0fc28a1c99a43a860afb794b606f, type: 3}
+  m_PrefabInstance: {fileID: 4609128710434127705}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &4609128710434127705
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -364,6 +375,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5582678234384766689, guid: 0e0e0fc28a1c99a43a860afb794b606f, type: 3}
+      propertyPath: textIcon
+      value: 
+      objectReference: {fileID: 1094773621179998487}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -375,4 +390,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 96433058}
   - {fileID: 1977467680}
-  - {fileID: 2953623406390529770}
+  - {fileID: 4609128710434127705}
