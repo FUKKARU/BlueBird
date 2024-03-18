@@ -1,46 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class BlueBirdMove : MonoBehaviour
+namespace battle
 {
-    //ジョイスティックを入れる
-    [SerializeField] FixedJoystick joyStick;
-
-    //スピード
-    [SerializeField] float speed;
-
-    //水平方向入力
-    float inputH;
-
-    //垂直方向入力
-    float inputV;
-
-    void Start()
+    public class BlueBirdMove : MonoBehaviour
     {
-        
-    }
 
-    void Update()
-    {
-        InputMovement();
-        LimitMovement();
-    }
+        //ジョイスティックを入れる
+        [SerializeField] FixedJoystick joyStick;
 
-    private void InputMovement()
-    {
-        inputH = joyStick.Horizontal * speed * Time.deltaTime;
-        inputV = joyStick.Vertical * speed * Time.deltaTime;
+        //スピード
+        [SerializeField] float speed;
 
-        transform.Translate(inputH,inputV,0);
-    }
+        //水平方向入力
+        float inputH;
 
-    private void LimitMovement()
-    {
-        Vector3 cPos = this.transform.position;
-        cPos.x = Mathf.Clamp(cPos.x, -2.1f, 2.1f);
-        cPos.y = Mathf.Clamp(cPos.y, -5.1f, 5.1f);
+        //垂直方向入力
+        float inputV;
 
-        this.transform.position = cPos;
+        void Start()
+        {
+
+        }
+
+        void Update()
+        {
+            InputMovement();
+            LimitMovement();
+        }
+
+        private void InputMovement()
+        {
+            inputH = joyStick.Horizontal * speed * Time.deltaTime;
+            inputV = joyStick.Vertical * speed * Time.deltaTime;
+
+            transform.Translate(inputH, inputV, 0);
+        }
+
+        private void LimitMovement()
+        {
+            Vector3 cPos = this.transform.position;
+            cPos.x = Mathf.Clamp(cPos.x, -2.1f, 2.1f);
+            cPos.y = Mathf.Clamp(cPos.y, -5.1f, 5.1f);
+
+            this.transform.position = cPos;
+        }
     }
 }
+
