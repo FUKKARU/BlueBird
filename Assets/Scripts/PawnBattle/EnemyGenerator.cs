@@ -1,3 +1,4 @@
+using battle;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,9 @@ namespace Battle
 {
     public class EnemyGenerator : MonoBehaviour
     {
-        [SerializeField] Enemy enemyPrefab;
+        [SerializeField] GameObject blueBird;
+
+        [SerializeField] GameObject enemyPrefab;
         [SerializeField] Transform[] generatePoints;
         [SerializeField] Transform[] destinationPoints;
         bool[] isExist;
@@ -30,9 +33,12 @@ namespace Battle
 
         private void Generate(int index)
         {
-            Enemy enemy = Instantiate(enemyPrefab, generatePoints[index].position, Quaternion.identity);
+            GameObject tezla = Instantiate(enemyPrefab, generatePoints[index].position, Quaternion.identity);
+            Enemy enemy = tezla.GetComponent<Enemy>();
             isExist[index] = true;
             enemy.Set(this, index, destinationPoints[index]);
+            Tezla_ShootBehaviour tezla_ShootBehaviour = tezla.GetComponent<Tezla_ShootBehaviour>();
+            tezla_ShootBehaviour.blueBird = blueBird;
         }
 
         public void PointToBlank(int index)

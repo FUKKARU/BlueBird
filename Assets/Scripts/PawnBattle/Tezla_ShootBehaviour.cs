@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace battle
+namespace Battle
 {
     public class Tezla_ShootBehaviour : MonoBehaviour
     {
-        [SerializeField] GameObject bulletPrefab;
+        public GameObject blueBird;
 
-        [SerializeField] GameObject blueBird;
+        [SerializeField] GameObject bulletPrefab;
 
         [SerializeField] bool shoot;
         void Start ()
