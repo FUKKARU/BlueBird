@@ -36,9 +36,9 @@ namespace Battle
             GameObject tezla = Instantiate(enemyPrefab, generatePoints[index].position, Quaternion.identity);
             Enemy enemy = tezla.GetComponent<Enemy>();
             isExist[index] = true;
-            enemy.Set(this, index, destinationPoints[index]);
+            enemy.Set(this, index, destinationPoints[index],blueBird);
             Tezla_ShootBehaviour tezla_ShootBehaviour = tezla.GetComponent<Tezla_ShootBehaviour>();
-            tezla_ShootBehaviour.blueBird = blueBird;
+            tezla_ShootBehaviour.ShootSet(blueBird);
         }
 
         public void PointToBlank(int index)

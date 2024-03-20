@@ -6,11 +6,17 @@ namespace Battle
 {
     public class Tezla_ShootBehaviour : MonoBehaviour
     {
-        public GameObject blueBird;
+        GameObject blueBird;
 
         [SerializeField] GameObject bulletPrefab;
 
         [SerializeField] bool shoot;
+
+        public void ShootSet(GameObject blueBird_IN)
+        {
+            blueBird = blueBird_IN;
+        }
+
         void Start ()
         {
             StartCoroutine(Main_Behaiviour());

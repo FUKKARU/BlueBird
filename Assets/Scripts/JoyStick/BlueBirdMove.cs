@@ -1,3 +1,5 @@
+using Battle;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +13,8 @@ namespace battle
 
         //スピード
         [SerializeField] float speed;
+
+        Enemy [] enemies;
 
         //水平方向入力
         float inputH;
@@ -40,10 +44,17 @@ namespace battle
         private void LimitMovement()
         {
             Vector3 cPos = this.transform.position;
-            cPos.x = Mathf.Clamp(cPos.x, -2.1f, 2.1f);
-            cPos.y = Mathf.Clamp(cPos.y, -5.1f, 5.1f);
+            cPos.x = Mathf.Clamp(cPos.x, -8.4f, 8.4f);
+            cPos.y = Mathf.Clamp(cPos.y, -4.5f, 4.5f);
 
             this.transform.position = cPos;
+        }
+
+        public void Tweet()
+        {
+            enemies = FindObjectsOfType<Enemy>();
+            int rand = UnityEngine.Random.Range(1,enemies.Length);
+            Destroy(enemies[rand].gameObject);
         }
     }
 }

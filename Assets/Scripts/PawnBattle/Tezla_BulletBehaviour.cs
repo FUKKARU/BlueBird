@@ -17,6 +17,8 @@ namespace Battle
 
         void Update()
         {
+            ActiveRegion();
+
             transform.position += new Vector3(dx, dy, 0) * Time.deltaTime;
 
             if (transform.position.x < -9 || transform.position.x > 9 ||
@@ -26,6 +28,8 @@ namespace Battle
             }
 
         }
+
+        void ActiveRegion() { if (transform.position.x > 10 || transform.position.y > 10 || transform.position.y < -10) Destroy(gameObject); }
     }
 }
 
