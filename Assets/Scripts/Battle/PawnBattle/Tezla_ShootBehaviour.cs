@@ -10,14 +10,13 @@ namespace Battle
 
         [SerializeField] GameObject bulletPrefab;
 
-        [SerializeField] bool shoot;
 
         public void ShootSet(GameObject blueBird_IN)
         {
             blueBird = blueBird_IN;
         }
 
-        void Start ()
+        public void Shoot ()
         {
             StartCoroutine(Main_Behaiviour());
         }
@@ -33,22 +32,17 @@ namespace Battle
 
         IEnumerator Main_Behaiviour()
         {
+            yield return WaveNBlueBirdAimShot(3, 6);
+            yield return new WaitForSeconds(3f);
+            yield return WaveNShotM(4, 16);
+            yield return new WaitForSeconds(3f);
+            yield return WaveNShotMCurve(3, 6);
+            yield return new WaitForSeconds(3f);
+            yield return ShotNCurve(3, 2);
+            yield return new WaitForSeconds(3f);
+            yield return WaveNBlueBirdAimShot(4, 6);
+            yield return new WaitForSeconds(5f);
 
-            while (shoot)
-            {
-                yield return WaveNBlueBirdAimShot(3, 6);
-                yield return new WaitForSeconds(3f);
-                yield return WaveNShotM(4, 16);
-                yield return new WaitForSeconds(3f);
-                yield return WaveNShotMCurve(3, 6);
-                yield return new WaitForSeconds(3f);
-                yield return ShotNCurve(3, 2);
-                yield return new WaitForSeconds(3f);
-                yield return WaveNBlueBirdAimShot(4, 6);
-                yield return new WaitForSeconds(5f);
-
-
-            }
             yield break;
         }
 

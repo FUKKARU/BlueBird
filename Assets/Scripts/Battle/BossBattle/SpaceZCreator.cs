@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class SpaceZCreator : MonoBehaviour
 {
+    [SerializeField] int repeatSec;
     [SerializeField] GameObject blueBird;
     [SerializeField] SpaceZ spaceZPrefab;
 
@@ -23,7 +24,7 @@ public class SpaceZCreator : MonoBehaviour
     {
         SpaceZ spaceZ = Instantiate(spaceZPrefab,RandomPos(),Quaternion.identity);
         spaceZ.setSpaceZ(blueBird);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(repeatSec);
         StartCoroutine(SpaceZ_create());
         yield return null;
     }

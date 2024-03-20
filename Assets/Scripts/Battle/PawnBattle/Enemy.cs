@@ -15,34 +15,41 @@ namespace Battle
         Transform destination;
         bool isSet;
         bool isReach;
+        bool shootEnabled = false;
+        Tezla_ShootBehaviour tezlaSB;
+
 
         private void OnDestroy()
         {
             generator.PointToBlank(index);
+            
         }
 
-        [SerializeField, Range(0, 1)] float value;
+        void Start()
+        {
+            tezlaSB = GetComponent<Tezla_ShootBehaviour>();
+        }
 
         private void Update()
         {
             PropellerMov();
             ActiveRegion();
-            
+
             if (!isSet)
                 return;
 
-            if (Vector3.Distance(transform.position, blueBird.transform.position) < 5.0f)
-            {
-                Quaternion rot = Quaternion.LookRotation(blueBird.transform.position - transform.position,transform.up);
-                //Quaternion rot = Quaternion.FromToRotation(-transform.up, blueBird.transform.position);
-
-                transform.rotation = Quaternion.Slerp(transform.rotation, rot, value);
-            }
 
             if (Vector3.Distance(transform.position, blueBird.transform.position) < 3.5f)
+            {
                 isReach = true;
-        }
+                if (!shootEnabled)
+                {
+                    tezlaSB.Shoot();
+                    shootEnabled = true;
+                }
 
+            }
+        }
         private void FixedUpdate()
         {
             if (isReach) 
