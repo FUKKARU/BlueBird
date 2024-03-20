@@ -1,7 +1,7 @@
 using Battle;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class SpaceZCreator : MonoBehaviour
@@ -9,6 +9,7 @@ public class SpaceZCreator : MonoBehaviour
     [SerializeField] int repeatSec;
     [SerializeField] GameObject blueBird;
     [SerializeField] SpaceZ spaceZPrefab;
+    [SerializeField] RedImage damageImage;
 
     private void Start()
     {
@@ -23,7 +24,7 @@ public class SpaceZCreator : MonoBehaviour
     IEnumerator SpaceZ_create()
     {
         SpaceZ spaceZ = Instantiate(spaceZPrefab,RandomPos(),Quaternion.identity);
-        spaceZ.setSpaceZ(blueBird);
+        spaceZ.setSpaceZ(blueBird, damageImage);
         yield return new WaitForSeconds(repeatSec);
         StartCoroutine(SpaceZ_create());
         yield return null;
