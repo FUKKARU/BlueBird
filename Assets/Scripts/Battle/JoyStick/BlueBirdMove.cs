@@ -50,12 +50,7 @@ namespace battle
             this.transform.position = cPos;
         }
 
-        public void Tweet()
-        {
-            enemies = FindObjectsOfType<Enemy>();
-            int rand = UnityEngine.Random.Range(1,enemies.Length);
-            Destroy(enemies[rand].gameObject);
-        }
+
     }
 }
 
