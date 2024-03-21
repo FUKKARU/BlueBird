@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SpaceZCreator : MonoBehaviour
 {
-    [SerializeField] int repeatSec;
+    [SerializeField] float repeatSec;
     [SerializeField] GameObject blueBird;
     [SerializeField] SpaceZ spaceZPrefab;
     [SerializeField] RedImage damageImage;
