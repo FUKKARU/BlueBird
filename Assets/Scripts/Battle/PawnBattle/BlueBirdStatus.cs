@@ -3,39 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BlueBirdStatus : MonoBehaviour
+namespace Battle
 {
-    [SerializeField] Slider hp_slider;
-    [SerializeField] Slider hp_diff_slider;
-    [SerializeField] float maxHP;
-    float hp;
-    float timer;
-
-    private void Start()
+    public class BlueBirdStatus : MonoBehaviour
     {
-        hp = maxHP;
-        timer = 0;
-    }
+        [SerializeField] Slider hp_slider;
+        [SerializeField] Slider hp_diff_slider;
+        [SerializeField] float maxHP;
+        float hp;
+        float timer;
 
-    private void Update()
-    {
-        if (hp <= 0)
-            gameObject.SetActive(false);
+        private void Start()
+        {
+            hp = maxHP;
+            timer = 0;
+        }
 
-        hp_diff_slider.value = Mathf.Lerp(hp_diff_slider.value, hp_slider.value, timer);
-        timer += 0.1f * Time.deltaTime;
-    }
+        private void Update()
+        {
+            if (hp <= 0)
+                gameObject.SetActive(false);
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy"))
-            Hit();
-    }
+            hp_diff_slider.value = Mathf.Lerp(hp_diff_slider.value, hp_slider.value, timer);
+            timer += 0.1f * Time.deltaTime;
+        }
 
-    private void Hit()
-    {
-        hp -= 5f;
-        hp_slider.value = hp / maxHP;
-        timer = 0;
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Enemy"))
+                Hit();
+        }
+
+        private void Hit()
+        {
+            hp -= 5f;
+            hp_slider.value = hp / maxHP;
+            timer = 0;
+        }
     }
 }

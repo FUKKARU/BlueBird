@@ -2,20 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Background : MonoBehaviour
+namespace Battle
 {
-    [SerializeField] float speed;
-    [SerializeField] Transform start;
-    [SerializeField] Transform end;
-
-    private void Update()
+    public class Background : MonoBehaviour
     {
-        if (Vector3.Distance(transform.position, end.position) < 0.1f)
-            transform.position = start.position;
-    }
+        [SerializeField] float speed;
+        [SerializeField] Transform start;
+        [SerializeField] Transform end;
 
-    private void FixedUpdate()
-    {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        private void Update()
+        {
+            if (Vector3.Distance(transform.position, end.position) < 0.1f)
+                transform.position = start.position;
+        }
+
+        private void FixedUpdate()
+        {
+            transform.position += Vector3.left * speed * Time.deltaTime;
+        }
     }
 }
