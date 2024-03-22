@@ -14,7 +14,7 @@ namespace battle
         //スピード
         [SerializeField] float speed;
 
-        Enemy [] enemies;
+        Tezla [] enemies;
 
         //水平方向入力
         float inputH;

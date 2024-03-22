@@ -12,7 +12,7 @@ namespace Battle
 
 
         GameObject blueBird;
-        RedImage damageImage;
+
 
         Vector3 direction;
 
@@ -33,10 +33,9 @@ namespace Battle
             ActiveRegion();
         }
 
-        public void setSpaceZ(GameObject blueBird_IN ,RedImage damageImage_IN)
+        public void setSpaceZ(GameObject blueBird_IN)
         {
             blueBird = blueBird_IN;
-            damageImage = damageImage_IN;
         }
 
         void OnCollisionEnter2D(Collision2D collision)
@@ -45,7 +44,7 @@ namespace Battle
             {
                 Camera camera = Camera.main;
                 if (camera != null) camera.GetComponent<ScreenShake>().ShakeOn();
-                damageImage.RedScreen();
+
                 Destroy(gameObject);
             }
         }

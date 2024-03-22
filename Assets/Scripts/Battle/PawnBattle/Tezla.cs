@@ -6,11 +6,11 @@ using UnityEngine;
 
 namespace Battle
 {
-    public class Enemy : MonoBehaviour
+    public class Tezla : MonoBehaviour
     {
         [SerializeField] float speed;
         GameObject blueBird;
-        EnemyGenerator generator;
+        TezlaGenerator generator;
         int index = -1;
         Transform destination;
         bool isSet;
@@ -58,7 +58,7 @@ namespace Battle
                 transform.position = Vector3.MoveTowards(transform.position, blueBird.transform.position, speed * Time.deltaTime);
         }
 
-        public void Set(EnemyGenerator eg, int num, Transform point,GameObject blueBird_IN)
+        public void Set(TezlaGenerator eg, int num, Transform point,GameObject blueBird_IN)
         {
             generator = eg;
             index = num;

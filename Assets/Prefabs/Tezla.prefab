@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2797097619361436714}
   - component: {fileID: 515247319133670965}
-  - component: {fileID: 2714405208182306179}
   - component: {fileID: -7966237975936953903}
+  - component: {fileID: 2714405208182306179}
   - component: {fileID: 2000190841894276760}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Tezla
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,6 +48,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5893460173854996715, guid: c0ca71475125a88459385cf68c88872d, type: 3}
+--- !u!114 &-7966237975936953903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4728221768084345280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb0af69076df599438542488364b9b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!212 &2714405208182306179
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -100,19 +113,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-7966237975936953903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4728221768084345280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0af69076df599438542488364b9b11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
 --- !u!58 &2000190841894276760
 CircleCollider2D:
   m_ObjectHideFlags: 0

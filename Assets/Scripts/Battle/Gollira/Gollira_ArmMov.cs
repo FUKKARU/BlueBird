@@ -77,9 +77,10 @@ namespace Battle
         {
             throwedRockNum++;
             string scene = SceneManager.GetActiveScene().name;
-            if (scene == "PawnBattle")
+            if (scene == "PawnBattle" || scene == "PawnBattle2")
             {
-
+                GameObject tezla = FindObjectOfType<Tezla>().gameObject;
+                createdRock.target = tezla;
             }
             else if (scene == "BossBattle")
             {

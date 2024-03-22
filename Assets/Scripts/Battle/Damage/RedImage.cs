@@ -7,22 +7,22 @@ namespace Battle
 {
     public class RedImage : MonoBehaviour
     {
-        [SerializeField] Image DamageImg;
+        [SerializeField] Image damageImg;
 
         void Start()
         {
-            DamageImg.color = Color.clear;
+            damageImg.color = Color.clear;
         }
 
         void Update()
         {
-            DamageImg.color = Color.Lerp(DamageImg.color, Color.clear, Time.deltaTime);
+            damageImg.color = Color.Lerp(damageImg.color, Color.clear, Time.deltaTime);
 
         }
 
         public void RedScreen()
         {
-            DamageImg.color = new Color(0.7f, 0, 0, 0.7f);
+            damageImg.color = new Color(0.7f, 0, 0, 0.7f);
         }
     }
 

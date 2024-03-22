@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 enum ATTACKER{
@@ -30,6 +31,8 @@ namespace Battle
 
         [SerializeField] AnimationCurve curve;
 
+        [SerializeField] GameObject blueBird;
+        [SerializeField] GreenImage recoverImage;
         ATTACKER attacker;
 
 
@@ -45,16 +48,16 @@ namespace Battle
                 switch (attacker)
                 {
                     case ATTACKER.GOLLIRA:
-                        StartCoroutine( Attack (gollira, gollira_startPos, gollira_endPos) );
-                        break;
+                    StartCoroutine( Attack (gollira, gollira_startPos, gollira_endPos) );
+                    break;
                     
                     case ATTACKER.YOUSEI:
-                        StartCoroutine( Attack (yousei, yousei_startPos, yousei_endPos) );
-                        break;
+                    StartCoroutine( Attack (yousei, yousei_startPos, yousei_endPos) );
+                    break;
                     
                     default:
-                        Debug.LogError("予期せぬパターン　TweetController.cs line 41");
-                        break;
+                    Debug.LogError("予期せぬパターン　TweetController.cs line 56");
+                    break;
 
                 }
                 
@@ -67,11 +70,18 @@ namespace Battle
             float time = 0;
             while (time <= 3)
             {
-                if (time > 1 && !onSpecialAttack)
+                if (time > 1 && time < 1.5f&& !onSpecialAttack)
                 {
                     if(attacker == gollira)
                     {
                         specialActionGollira = true;
+                    }
+
+                    if(attacker == yousei && blueBird != null)
+                    {
+                        blueBird.GetComponent<BlueBirdStatus>().input_HP += 10;
+                        recoverImage.GreenScreen();
+                        Debug.Log("heal");
                     }
                     
                     onSpecialAttack = true;

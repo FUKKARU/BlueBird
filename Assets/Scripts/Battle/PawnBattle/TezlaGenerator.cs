@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Battle
 {
-    public class EnemyGenerator : MonoBehaviour
+    public class TezlaGenerator : MonoBehaviour
     {
         [SerializeField] GameObject blueBird;
 
@@ -34,7 +34,7 @@ namespace Battle
         private void Generate(int index)
         {
             GameObject tezla = Instantiate(enemyPrefab, generatePoints[index].position, Quaternion.identity);
-            Enemy enemy = tezla.GetComponent<Enemy>();
+            Tezla enemy = tezla.GetComponent<Tezla>();
             isExist[index] = true;
             enemy.Set(this, index, destinationPoints[index],blueBird);
             Tezla_ShootBehaviour tezla_ShootBehaviour = tezla.GetComponent<Tezla_ShootBehaviour>();

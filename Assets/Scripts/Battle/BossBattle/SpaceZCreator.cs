@@ -9,7 +9,7 @@ public class SpaceZCreator : MonoBehaviour
     [SerializeField] float repeatSec;
     [SerializeField] GameObject blueBird;
     [SerializeField] SpaceZ spaceZPrefab;
-    [SerializeField] RedImage damageImage;
+
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class SpaceZCreator : MonoBehaviour
     IEnumerator SpaceZ_create()
     {
         SpaceZ spaceZ = Instantiate(spaceZPrefab,RandomPos(),Quaternion.identity);
-        spaceZ.setSpaceZ(blueBird, damageImage);
+        spaceZ.setSpaceZ(blueBird);
         yield return new WaitForSeconds(repeatSec);
         StartCoroutine(SpaceZ_create());
         yield return null;
