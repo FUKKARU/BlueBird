@@ -23,4 +23,5 @@ MonoBehaviour:
     Text: "4\u756A\u76EE\u306E\u30B7\u30FC\u30F3\u3060\u3088\n4\u884C\u51FA\u308B\u3088\n\u66F8\u304F\u3053\u3068\u304C\u306A\u3044\u3088\n\u304A\u82B1\u304C\u3044\u3063\u3071\u3044"
   CharsShowInterval: 0.1
   SkipTime: 0.5
+  SkipInterval: 0.5
   CaptionSE: {fileID: 8300000, guid: 41eaf4c2cee9d88459020d98c8b55fe9, type: 3}

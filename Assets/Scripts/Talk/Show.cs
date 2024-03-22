@@ -18,6 +18,7 @@ namespace Talk
         string[] text;
         int nowRow = 1; // 何行目を表示するか
         int rowLen; // 全部で何行あるか
+        bool isOnSkipInterval = false; // スキップの入力のインターバル中かどうか
         bool isClickable = true; // プレイヤーの入力を受け付けるか
         bool isSkipable = false; // テキストをスキップ可能かどうか
         Coroutine showCharsCor;
@@ -38,9 +39,11 @@ namespace Talk
 
         void Update()
         {
-            if (isClickable && Input.GetMouseButtonDown(0))
+            if (isClickable && !isOnSkipInterval && Input.GetMouseButtonDown(0))
             {
-                isClickable=false;
+                isClickable = false;
+                isOnSkipInterval = true;
+                StartCoroutine(CountSkipInterval());
 
                 textIcon.enabled = false;
 
@@ -55,9 +58,11 @@ namespace Talk
                 }
             }
 
-            if (isSkipable && Input.GetMouseButtonDown(0))
+            if (isSkipable && !isOnSkipInterval && Input.GetMouseButtonDown(0))
             {
                 isSkipable = false;
+                isOnSkipInterval = true;
+                StartCoroutine(CountSkipInterval());
 
                 if (nowRow <= rowLen)
                 {
@@ -88,6 +93,7 @@ namespace Talk
             char[] chars = text[rowIdx - 1].ToCharArray(); // 1文字ずつ分割
             showCharsCor = StartCoroutine(ShowChars(chars));
         }
+
         IEnumerator ShowChars(char[] chars)
         {
             countSkipTimeCor = StartCoroutine(CountSkipTime(SceneSO.Entity.SkipTime));
@@ -117,12 +123,19 @@ namespace Talk
 
             isClickable = true;
         }
+
         IEnumerator CountSkipTime(float time)
         {
             yield return new WaitForSeconds(time);
             isSkipable = true;
 
             textIcon.enabled = true;
+        }
+
+        IEnumerator CountSkipInterval()
+        {
+            yield return new WaitForSeconds(SceneSO.Entity.SkipInterval);
+            isOnSkipInterval = false;
         }
     }
 }
