@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4205334493960735707}
   - component: {fileID: 3410049015133695056}
   - component: {fileID: 5582678234384766689}
+  - component: {fileID: 2996226513984876963}
   - component: {fileID: 2867049609736184491}
   m_Layer: 5
   m_Name: Text
@@ -144,12 +145,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2938817514886744954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf2d894ea4711604e8b87b286798738d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textIcon: {fileID: 1562576711381802121}
+--- !u!114 &2996226513984876963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2938817514886744954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b2f982c7b1b12e48a2cf0324e7a91db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textIcon: {fileID: 1562576711381802121}
+  speakerImg: {fileID: 1319044268160266524}
+  sprites:
+  - {fileID: 21300000, guid: e22f6a344d283484687083b08c5ae048, type: 3}
+  - {fileID: 21300000, guid: febafb66ef424824bbda395bf73e71ce, type: 3}
+  - {fileID: 21300000, guid: 56ae3324f35f94140804a2543e8440b8, type: 3}
+  - {fileID: 21300000, guid: e110250dbf7dfcd449eac9f607f84ac9, type: 3}
+  - {fileID: 21300000, guid: 1db3b89cca753344ca8c0e18ee4e4c13, type: 3}
+  - {fileID: 21300000, guid: 4d44e7f81e6f5a74ca424f85fc88e484, type: 3}
 --- !u!82 &2867049609736184491
 AudioSource:
   m_ObjectHideFlags: 0
@@ -277,6 +299,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7670680576852204435}
   - {fileID: 5466458713756652147}
   - {fileID: 7691820635128367221}
   - {fileID: 3653931386068576707}
@@ -350,6 +373,81 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &6633025044632401906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7670680576852204435}
+  - component: {fileID: 5589615318555199779}
+  - component: {fileID: 1319044268160266524}
+  m_Layer: 5
+  m_Name: SpeakerImg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &7670680576852204435
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6633025044632401906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1768675657304202310}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -300, y: 100}
+  m_SizeDelta: {x: 300, y: 300}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5589615318555199779
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6633025044632401906}
+  m_CullTransparentMesh: 1
+--- !u!114 &1319044268160266524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6633025044632401906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7455780328048958274
 GameObject:
   m_ObjectHideFlags: 0
