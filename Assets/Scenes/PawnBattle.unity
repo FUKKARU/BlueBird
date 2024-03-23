@@ -1637,11 +1637,11 @@ MonoBehaviour:
   gollira: {fileID: 921872364}
   gollira_startPos: {fileID: 1458490092}
   gollira_endPos: {fileID: 884414790}
-  golliraSE: {fileID: 8300000, guid: 10afdacaa05546d4085920da2a780a8f, type: 3}
+  golliraSE: {fileID: 8300000, guid: 86afc4386496eb642b170552d78e7172, type: 3}
   yousei: {fileID: 1688813113}
   yousei_startPos: {fileID: 1301119046}
   yousei_endPos: {fileID: 481793483}
-  youseiSE: {fileID: 8300000, guid: 07b857b9ae6b33340aa754e8c2ef0ea1, type: 3}
+  youseiSE: {fileID: 8300000, guid: 52e6015a35244c7499fa382eccc7f3a9, type: 3}
   lightning: {fileID: 1829680836}
   lightningSE: {fileID: 8300000, guid: 0566a1bb1d68f2a45b8ede71a8713b3c, type: 3}
   yellowImage: {fileID: 1742002544}
@@ -1689,7 +1689,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   blueBird: {fileID: 1847800176}
   tweetVideo: {fileID: 527535414}
-  tweetVideoSE: {fileID: 8300000, guid: 83160dee1aedaaf498d4c9d00a978365, type: 3}
+  tweetVideoSE: {fileID: 8300000, guid: 198f28a429fb95240a7a3b2cca572dbe, type: 3}
   recoverImage: {fileID: 1305439684}
   tweetButton: {fileID: 1650867608}
   aS: {fileID: 1271231915}
@@ -1720,7 +1720,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
