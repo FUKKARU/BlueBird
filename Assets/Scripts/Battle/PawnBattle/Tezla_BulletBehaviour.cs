@@ -15,6 +15,11 @@ namespace Battle
             dy = Mathf.Sin(angle) * speed;
         }
 
+        private void Awake()
+        {
+            gameObject.layer = LayerMask.NameToLayer("Bullet");
+        }
+
         void Update()
         {
             ActiveRegion();

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2640432344494066149}
   - component: {fileID: 8017102092570426052}
   - component: {fileID: 140221994478618151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tezla_Bullet
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -11,6 +11,12 @@ public class Gollira_RockMov : MonoBehaviour
     [NonSerialized] public GameObject target;
     [SerializeField] GameObject hitEffect;
     GameObject Oya;
+
+    private void Awake()
+    {
+        gameObject.layer = LayerMask.NameToLayer("Rock");
+    }
+
     void Start()
     {
         this.gameObject.transform.parent = Oya.gameObject.transform;
