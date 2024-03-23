@@ -11,6 +11,8 @@ public class Gollira_RockMov : MonoBehaviour
     [NonSerialized] public GameObject target;
     [SerializeField] GameObject hitEffect;
     GameObject Oya;
+
+
     void Start()
     {
         this.gameObject.transform.parent = Oya.gameObject.transform;
@@ -30,9 +32,13 @@ public class Gollira_RockMov : MonoBehaviour
 
     public void Gollira_RockDetach()
     {
-
+        if(gameObject != null) 
+        {
             this.gameObject.transform.parent = null;
             onThrow = true;
+        }
+
+
 
     }
 
@@ -58,6 +64,10 @@ public class Gollira_RockMov : MonoBehaviour
             if (camera != null) camera.GetComponent<ScreenShake>().ShakeOn();
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+        }
+        else if(collision.gameObject.tag == "Enemy")
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
         }
     }
 

@@ -15,6 +15,7 @@ namespace Battle
             dy = Mathf.Sin(angle) * speed;
         }
 
+
         void Update()
         {
             ActiveRegion();
@@ -27,6 +28,16 @@ namespace Battle
                 Destroy(gameObject);
             }
 
+        }
+
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "BlueBird")
+            {
+
+                Destroy(gameObject);
+            }
         }
 
         void ActiveRegion() { if (transform.position.x > 10 || transform.position.y > 10 || transform.position.y < -10) Destroy(gameObject); }

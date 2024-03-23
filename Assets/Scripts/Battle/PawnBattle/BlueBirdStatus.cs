@@ -51,10 +51,26 @@ namespace Battle
                 
         }
 
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "EnemyBullet")
+            {
+                HitBullet();
+            }
+        }
+
         private void Hit()
         {
             hp -= 5f;
             input_HP -= 5f;
+            hp_slider.value = hp / maxHP;
+            timer = 0;
+        }
+
+        private void HitBullet()
+        {
+            hp -= 1f;
+            input_HP -= 1f;
             hp_slider.value = hp / maxHP;
             timer = 0;
         }
