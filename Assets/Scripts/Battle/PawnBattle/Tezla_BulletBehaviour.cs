@@ -29,6 +29,16 @@ namespace Battle
 
         }
 
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag == "BlueBird")
+            {
+
+                Destroy(gameObject);
+            }
+        }
+
+
         void ActiveRegion() { if (transform.position.x > 10 || transform.position.y > 10 || transform.position.y < -10) Destroy(gameObject); }
     }
 }

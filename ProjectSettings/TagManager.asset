@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BlueBird
   - Enemy
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

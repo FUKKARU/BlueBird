@@ -8,7 +8,9 @@ using UnityEngine.UI;
 
 enum ATTACKER{
     GOLLIRA,
-    YOUSEI
+    YOUSEI,
+    LIGHTNING
+
 }
 
 namespace Battle 
@@ -24,10 +26,16 @@ namespace Battle
         [SerializeField] GameObject gollira;
         [SerializeField] Transform gollira_startPos;
         [SerializeField] Transform gollira_endPos;
+        [SerializeField] AudioClip golliraSE;
 
         [SerializeField] GameObject yousei;
         [SerializeField] Transform yousei_startPos;
         [SerializeField] Transform yousei_endPos;
+        [SerializeField] AudioClip youseiSE;
+
+        [SerializeField] GameObject lightning;
+        [SerializeField] AudioClip lightningSE;
+        bool SE_Happend = false;
 
         [SerializeField] AnimationCurve curve;
 
@@ -37,13 +45,21 @@ namespace Battle
 
         [SerializeField] Button tweetButton;
 
+        [SerializeField] AudioSource aS;
+
+        private void Start()
+        {
+            lightning.GetComponent<SpriteRenderer>().color = new Color(1, 0.9408277f, 0.5440251f, 0);
+        }
+
         public void Tweet()
         {
             if (!onAttack)
             {
-                int rand = UnityEngine.Random.Range(0,2);
-                if(rand == 0) attacker = ATTACKER.GOLLIRA;
-                else if(rand == 1) attacker = ATTACKER.YOUSEI;
+                int rand = UnityEngine.Random.Range(0,1);
+                if (rand == 0) attacker = ATTACKER.GOLLIRA;
+                else if (rand == 1) attacker = ATTACKER.YOUSEI;
+                else if (rand == 2) attacker = ATTACKER.LIGHTNING;
 
                 switch (attacker)
                 {
@@ -54,7 +70,11 @@ namespace Battle
                     case ATTACKER.YOUSEI:
                     StartCoroutine( Attack (yousei, yousei_startPos, yousei_endPos) );
                     break;
-                    
+
+                    case ATTACKER.LIGHTNING:
+                        StartCoroutine(Attack(lightning,lightning.transform,lightning.transform));
+                    break;
+
                     default:
                     Debug.LogError("予期せぬパターン　TweetController.cs line 56");
                     break;
@@ -71,41 +91,78 @@ namespace Battle
             float time = 0;
             while (time <= 3)
             {
-                if (time > 1 && time < 1.5f&& !onSpecialAttack)
+                if(attacker == lightning)
                 {
-                    if(attacker == gollira)
+                    if (time < 0.5f)
                     {
-                        specialActionGollira = true;
-                    }
+                        if (!SE_Happend)
+                        {
+                            lightning.GetComponent<SpriteRenderer>().color = new Color(1, 0.9408277f, 0.5440251f, 1);
+                            aS.PlayOneShot(lightningSE);
+                            SE_Happend = true;
 
-                    if(attacker == yousei && blueBird != null)
-                    {
-                        blueBird.GetComponent<BlueBirdStatus>().input_HP += 10;
-                        recoverImage.GreenScreen();
-                        Debug.Log("heal");
+                        }
+
+                        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                        foreach (GameObject enemy in enemies)
+                        {
+                            if (enemy.transform.position.x > -8.4)
+                            {
+                                Destroy(enemy);
+                            }
+                        }
                     }
-                    
-                    onSpecialAttack = true;
+                    else
+                    {
+                        lightning.GetComponent<SpriteRenderer>().color = new Color(1, 0.9408277f, 0.5440251f, 0);
+                        SE_Happend = false;
+                    }
                 }
-                if (time > 2 && onSpecialAttack)
+                else
                 {
-                    if(attacker == gollira)
+                    if (time > 1 && time < 1.5f && !onSpecialAttack)
                     {
-                        specialActionGollira = false;
+                        if (attacker == gollira)
+                        {
+                            specialActionGollira = true;
+                            aS.PlayOneShot(golliraSE);
+                        }
+
+                        if (attacker == yousei && blueBird != null)
+                        {
+                            blueBird.GetComponent<BlueBirdStatus>().input_HP += 10;
+                            recoverImage.GreenScreen();
+                            aS.PlayOneShot(youseiSE);
+                            Debug.Log("heal");
+                        }
+
+                        onSpecialAttack = true;
                     }
-                    
-                    onSpecialAttack = false;
+                    if (time > 2 && onSpecialAttack)
+                    {
+                        if (attacker == gollira)
+                        {
+                            specialActionGollira = false;
+                        }
+
+                        onSpecialAttack = false;
+                    }
+                    attacker.transform.position = Vector3.Lerp(startPos.position, endPos.position, curve.Evaluate(time));
                 }
-                attacker.transform.position = Vector3.Lerp(startPos.position, endPos.position, curve.Evaluate(time));
+                
                 yield return new WaitForSeconds(0.01f);
                 time += 0.01f;
             }
+
             tweetButton.image.color = new Color(1, 1, 1, 1f);
             onAttack = false;
+            
 
             yield return null;
 
         }
+
+
     }
 }
 

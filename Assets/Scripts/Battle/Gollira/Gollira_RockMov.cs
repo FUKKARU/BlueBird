@@ -30,9 +30,13 @@ public class Gollira_RockMov : MonoBehaviour
 
     public void Gollira_RockDetach()
     {
-
+        if(gameObject != null) 
+        {
             this.gameObject.transform.parent = null;
             onThrow = true;
+        }
+
+
 
     }
 

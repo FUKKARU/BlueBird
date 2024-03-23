@@ -48,6 +48,10 @@ namespace Battle
                 Hit();
                 
             }
+            else if(other.gameObject.CompareTag("EnemyBullet"))
+            {
+                HitBullet();
+            }
                 
         }
 
@@ -55,6 +59,14 @@ namespace Battle
         {
             hp -= 5f;
             input_HP -= 5f;
+            hp_slider.value = hp / maxHP;
+            timer = 0;
+        }
+
+        private void HitBullet()
+        {
+            hp -= 1f;
+            input_HP -= 1f;
             hp_slider.value = hp / maxHP;
             timer = 0;
         }

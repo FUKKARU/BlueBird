@@ -74,6 +74,18 @@ namespace Battle
             transform.rotation = Quaternion.AngleAxis(anglePerSec, transform.up) * transform.rotation;
         }
 
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag == "BlueBird")
+            {
+                Camera camera = Camera.main;
+                if (camera != null) camera.GetComponent<ScreenShake>().ShakeOn();
+
+                Destroy(gameObject);
+            }
+        }
+
+
         void ActiveRegion() { if (transform.position.x > 10 || transform.position.y > 10 || transform.position.y < -10) Destroy(gameObject); }
     }
 }
