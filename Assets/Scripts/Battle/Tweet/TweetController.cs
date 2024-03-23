@@ -135,7 +135,7 @@ namespace Battle
 
                         if (attacker == yousei && blueBird != null)
                         {
-                            blueBird.GetComponent<BlueBirdStatus>().input_HP += 10;
+                            blueBird.GetComponent<BlueBirdStatus>().Heal(20f);
                             recoverImage.GreenScreen();
                             aS.PlayOneShot(youseiSE);
                             Debug.Log("heal");

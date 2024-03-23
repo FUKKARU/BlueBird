@@ -9,7 +9,8 @@ namespace Battle
     public class BlueBirdStatus : MonoBehaviour
     {
         [SerializeField] Slider hp_slider;
-        [SerializeField] Slider hp_diff_slider;
+        [SerializeField] Slider hp_hit_slider;
+        [SerializeField] Slider hp_heal_slider;
         [SerializeField] float maxHP;
         [SerializeField] RedImage redImage;
         [SerializeField] GameObject damageEffect;
@@ -27,16 +28,15 @@ namespace Battle
 
         private void Update()
         {
-            HealthCont();
+            //HealthCont();
             //Debug.Log("hp " + hp);
             //Debug.Log("input_HP " + input_HP);
             if (hp <= 0)
                 gameObject.SetActive(false);
 
-            hp_diff_slider.value = Mathf.Lerp(hp_diff_slider.value, hp_slider.value, timer);
-            timer += 0.1f * Time.deltaTime;
-
-            
+            hp_hit_slider.value = Mathf.Lerp(hp_hit_slider.value, hp_slider.value, timer);
+            hp_slider.value = Mathf.Lerp(hp_slider.value, hp_heal_slider.value, timer);
+            timer += 0.01f * Time.deltaTime;
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -64,6 +64,7 @@ namespace Battle
             hp -= 5f;
             input_HP -= 5f;
             hp_slider.value = hp / maxHP;
+            hp_heal_slider.value = hp / maxHP;
             timer = 0;
         }
 
@@ -72,6 +73,7 @@ namespace Battle
             hp -= 1f;
             input_HP -= 1f;
             hp_slider.value = hp / maxHP;
+            hp_heal_slider.value = hp / maxHP;
             timer = 0;
         }
 
@@ -86,6 +88,17 @@ namespace Battle
             {
                 hp = input_HP;
             }
+
+            hp_heal_slider.value = hp / maxHP;
+        }
+
+        public void Heal(float amount)
+        {
+            if (amount >= maxHP - hp)
+                amount = maxHP - hp;
+
+            hp += amount;
+            hp_heal_slider.value = hp / maxHP;
         }
     }
 }
