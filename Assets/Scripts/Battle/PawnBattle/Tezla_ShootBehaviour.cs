@@ -24,7 +24,7 @@ namespace Battle
         void Shot(float angle, float speed)
         {
 
-            Tezla_BulletBehaviour bullet = Instantiate(bulletPrefab, transform.position, transform.rotation).GetComponent<Tezla_BulletBehaviour>();
+            Tezla_BulletBehaviour bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity).GetComponent<Tezla_BulletBehaviour>();
 
             bullet.Setting(angle, speed);
 

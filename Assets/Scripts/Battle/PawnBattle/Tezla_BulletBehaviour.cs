@@ -15,7 +15,6 @@ namespace Battle
             dy = Mathf.Sin(angle) * speed;
         }
 
-
         void Update()
         {
             ActiveRegion();

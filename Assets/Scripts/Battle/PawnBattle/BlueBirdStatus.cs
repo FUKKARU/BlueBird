@@ -45,7 +45,7 @@ namespace Battle
             {
                 redImage.RedScreen();
                 Instantiate(damageEffect,transform.position,Quaternion.identity);
-                //Hit();
+                Hit();
                 
             }
                 
@@ -55,14 +55,14 @@ namespace Battle
         {
             if (collision.gameObject.tag == "EnemyBullet")
             {
-                //HitBullet();
+                HitBullet();
             }
         }
 
         private void Hit()
         {
-            hp -= 5f;
-            input_HP -= 5f;
+            hp -= 15f;
+            input_HP -= 15f;
             hp_slider.value = hp / maxHP;
             hp_heal_slider.value = hp / maxHP;
             timer = 0;
