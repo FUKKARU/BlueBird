@@ -10,18 +10,22 @@ public class Gollira_RockMov : MonoBehaviour
     [NonSerialized] public bool onThrow = false;
     [NonSerialized] public GameObject target;
     [SerializeField] GameObject hitEffect;
+    //change Å´
+    [SerializeField]Å@CircleCollider2D circleCollider;
+    //
     GameObject Oya;
 
 
     void Start()
     {
         this.gameObject.transform.parent = Oya.gameObject.transform;
+        circleCollider.enabled = false;
     }
 
 
     void Update()
     {
-        Debug.Log(gameObject.name + "  " + onThrow);
+        //Debug.Log(gameObject.name + "  " + onThrow);
         GoToTarget();
         ActiveRegion();
     }
@@ -37,6 +41,9 @@ public class Gollira_RockMov : MonoBehaviour
         {
             this.gameObject.transform.parent = null;
             onThrow = true;
+            //
+            circleCollider.enabled = true;
+            //
         }
 
 
@@ -71,13 +78,13 @@ public class Gollira_RockMov : MonoBehaviour
         else if(collision.gameObject.tag == "Enemy" && !onThrow)
         {
             Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
-            Debug.Log("hitx");
+            //Debug.Log("hitx");
             StartCoroutine(Check(collision.gameObject));
         }
         else if(collision.gameObject.tag == "BlueBird")
         {
             Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
-            Debug.Log("hitb");
+            //Debug.Log("hitb");
         }
 
     }
@@ -86,8 +93,8 @@ public class Gollira_RockMov : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         float dis = Vector3.Distance(e.transform.position, gameObject.transform.position);
-        Debug.Log(dis + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        Debug.Log(onThrow + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        //Debug.Log(dis + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        //Debug.Log(onThrow + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         if(dis < 2 && onThrow)
         {
             Instantiate(hitEffect, (transform.position + e.transform.position) / 2, Quaternion.identity);

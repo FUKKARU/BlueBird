@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 
 enum ATTACKER{
@@ -43,6 +44,9 @@ namespace Battle
         [SerializeField] AnimationCurve curve;
 
         [SerializeField] GameObject blueBird;
+
+        [SerializeField] GameObject tweetVideo;
+        [SerializeField] AudioClip tweetVideoSE;
         [SerializeField] GreenImage recoverImage;
         ATTACKER attacker;
 
@@ -55,10 +59,19 @@ namespace Battle
             lightning.GetComponent<SpriteRenderer>().color = new Color(1, 0.9408277f, 0.5440251f, 0);
         }
 
+
         public void Tweet()
         {
             if (!onAttack)
             {
+                if (blueBird != false)
+                {
+
+                    tweetVideo.GetComponent<VideoPlayer>().Play();
+                    aS.PlayOneShot(tweetVideoSE);
+                    Debug.Log("S");
+                }
+
                 int rand = UnityEngine.Random.Range(0,3);
                 if (rand == 0) attacker = ATTACKER.GOLLIRA;
                 else if (rand == 1) attacker = ATTACKER.YOUSEI;
@@ -79,7 +92,7 @@ namespace Battle
                     break;
 
                     default:
-                    Debug.LogError("予期せぬパターン　TweetController.cs line 56");
+                    //Debug.LogError("予期せぬパターン　TweetController.cs line 56");
                     break;
 
                 }
@@ -138,7 +151,7 @@ namespace Battle
                             blueBird.GetComponent<BlueBirdStatus>().Heal(20f);
                             recoverImage.GreenScreen();
                             aS.PlayOneShot(youseiSE);
-                            Debug.Log("heal");
+                            //Debug.Log("heal");
                         }
 
                         onSpecialAttack = true;

@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 8503041884853336, guid: aaf548ae9ac67c649bdeb0fa385ef7b3, type: 3}
+  circleCollider: {fileID: 5412746462844896626}
 --- !u!58 &5412746462844896626
 CircleCollider2D:
   m_ObjectHideFlags: 0
