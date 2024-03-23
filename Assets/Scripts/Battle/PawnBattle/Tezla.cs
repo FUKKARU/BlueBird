@@ -18,15 +18,12 @@ namespace Battle
         bool shootEnabled = false;
         Tezla_ShootBehaviour tezlaSB;
 
-        public bool chase = true;
+
         private void OnDestroy()
         {
-            if(chase)
-            {
-                generator.PointToBlank(index);
-            }
-            
-            
+
+
+            generator.PointToBlank(index);
         }
 
         void Start()
@@ -38,7 +35,7 @@ namespace Battle
         {
             PropellerMov();
             ActiveRegion();
-            //LimitMovement_T();
+            LimitMovement_T();
 
             if (!isSet)
                 return;
@@ -57,13 +54,10 @@ namespace Battle
         }
         private void FixedUpdate()
         {
-            if (chase)
-            {
-                if (isReach)
-                    transform.position += 0.005f * new Vector3(Mathf.Cos(Time.time), Mathf.Sin(Time.time));
-                else
-                    transform.position = Vector3.MoveTowards(transform.position, blueBird.transform.position, speed * Time.deltaTime);
-            }
+            if (isReach)
+                transform.position += 0.005f * new Vector3(Mathf.Cos(Time.time), Mathf.Sin(Time.time));
+            else
+                transform.position = Vector3.MoveTowards(transform.position, blueBird.transform.position, speed * Time.deltaTime);
 
         }
 

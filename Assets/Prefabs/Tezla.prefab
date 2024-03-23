@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  chase: 1
 --- !u!212 &2714405208182306179
 SpriteRenderer:
   m_ObjectHideFlags: 0
