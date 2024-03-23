@@ -28,8 +28,8 @@ namespace Battle
         private void Update()
         {
             HealthCont();
-            Debug.Log("hp " + hp);
-            Debug.Log("input_HP " + input_HP);
+            //Debug.Log("hp " + hp);
+            //Debug.Log("input_HP " + input_HP);
             if (hp <= 0)
                 gameObject.SetActive(false);
 
@@ -45,7 +45,7 @@ namespace Battle
             {
                 redImage.RedScreen();
                 Instantiate(damageEffect,transform.position,Quaternion.identity);
-                Hit();
+                //Hit();
                 
             }
                 
@@ -55,7 +55,7 @@ namespace Battle
         {
             if (collision.gameObject.tag == "EnemyBullet")
             {
-                HitBullet();
+                //HitBullet();
             }
         }
 

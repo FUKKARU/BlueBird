@@ -91,6 +91,7 @@ namespace Battle
         private void LimitMovement_T()
         {
             Vector3 cPos = this.transform.position;
+            cPos.x = Mathf.Clamp(cPos.x, -30f, 5.5f);
             cPos.y = Mathf.Clamp(cPos.y, -4.5f, 4.5f);
 
             this.transform.position = cPos;

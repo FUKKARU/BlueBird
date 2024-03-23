@@ -34,7 +34,7 @@ namespace Battle
             {
 
                 d = 0;
-                if (!hasRockCreatedÅ@&& turnTimes == throwedRockNum)
+                if (!hasRockCreatedÅ@&& turnTimes == throwedRockNum && transform.parent.gameObject.transform.position.y < -6.15f)
                 {
 
                     RockCreate();
@@ -87,10 +87,10 @@ namespace Battle
                 GameObject spaceZ = FindObjectOfType<SpaceZ>().gameObject;
                 createdRock.target = spaceZ;
             }
-            createdRock.Gollira_RockDetach();
+            
             if (createdRock != null)
             {
-                
+                createdRock.Gollira_RockDetach();
             }
 
             hasRockCreated = false;
