@@ -35,7 +35,7 @@ namespace Battle
         [SerializeField] GreenImage recoverImage;
         ATTACKER attacker;
 
-
+        [SerializeField] Button tweetButton;
 
         public void Tweet()
         {
@@ -66,6 +66,7 @@ namespace Battle
 
         IEnumerator Attack(GameObject attacker, Transform startPos, Transform endPos)
         {
+            tweetButton.image.color = new Color(1,1,1,0.6f);
             onAttack = true;
             float time = 0;
             while (time <= 3)
@@ -99,6 +100,7 @@ namespace Battle
                 yield return new WaitForSeconds(0.01f);
                 time += 0.01f;
             }
+            tweetButton.image.color = new Color(1, 1, 1, 1f);
             onAttack = false;
 
             yield return null;

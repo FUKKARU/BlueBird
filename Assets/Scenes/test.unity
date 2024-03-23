@@ -267,6 +267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: eff_bird_damage
       objectReference: {fileID: 0}
+    - target: {fileID: 9111804918293446174, guid: 78e55f8bc8d7c4544ba3db54196f48ae, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

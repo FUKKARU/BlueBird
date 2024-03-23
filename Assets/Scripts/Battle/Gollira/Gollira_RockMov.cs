@@ -9,6 +9,7 @@ public class Gollira_RockMov : MonoBehaviour
 {
     [NonSerialized] public bool onThrow = false;
     [NonSerialized] public GameObject target;
+    [SerializeField] GameObject hitEffect;
     GameObject Oya;
     void Start()
     {
@@ -52,6 +53,7 @@ public class Gollira_RockMov : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" && onThrow)
         {
+            Instantiate(hitEffect, (transform.position + collision.transform.position)/2 , Quaternion.identity );
             Camera camera = Camera.main;
             if (camera != null) camera.GetComponent<ScreenShake>().ShakeOn();
             Destroy(collision.gameObject);
