@@ -59,7 +59,7 @@ namespace Battle
         {
             if (!onAttack)
             {
-                int rand = UnityEngine.Random.Range(0,1);
+                int rand = UnityEngine.Random.Range(0,3);
                 if (rand == 0) attacker = ATTACKER.GOLLIRA;
                 else if (rand == 1) attacker = ATTACKER.YOUSEI;
                 else if (rand == 2) attacker = ATTACKER.LIGHTNING;
