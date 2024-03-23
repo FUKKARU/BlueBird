@@ -1537,11 +1537,11 @@ MonoBehaviour:
   gollira: {fileID: 1796038246}
   gollira_startPos: {fileID: 115821795}
   gollira_endPos: {fileID: 333323072}
-  golliraSE: {fileID: 8300000, guid: 10afdacaa05546d4085920da2a780a8f, type: 3}
+  golliraSE: {fileID: 8300000, guid: 86afc4386496eb642b170552d78e7172, type: 3}
   yousei: {fileID: 607437591}
   yousei_startPos: {fileID: 418890151}
   yousei_endPos: {fileID: 1204939683}
-  youseiSE: {fileID: 8300000, guid: 07b857b9ae6b33340aa754e8c2ef0ea1, type: 3}
+  youseiSE: {fileID: 8300000, guid: 52e6015a35244c7499fa382eccc7f3a9, type: 3}
   lightning: {fileID: 481223535}
   lightningSE: {fileID: 8300000, guid: 0566a1bb1d68f2a45b8ede71a8713b3c, type: 3}
   yellowImage: {fileID: 536595219}
@@ -1589,7 +1589,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   blueBird: {fileID: 4022329877861682527}
   tweetVideo: {fileID: 1932750524}
-  tweetVideoSE: {fileID: 8300000, guid: 83160dee1aedaaf498d4c9d00a978365, type: 3}
+  tweetVideoSE: {fileID: 8300000, guid: 198f28a429fb95240a7a3b2cca572dbe, type: 3}
   recoverImage: {fileID: 1219344089}
   tweetButton: {fileID: 1143056979}
   aS: {fileID: 1067254618}

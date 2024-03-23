@@ -62,7 +62,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  chase: 1
 --- !u!212 &2714405208182306179
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -160,7 +159,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eb45f3fb1141ee145870bc8f58a2c385, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6821cec73d73a7646bd26d9669ad7d73, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.154
   m_Pitch: 1
