@@ -45,7 +45,7 @@ namespace Battle
             {
                 redImage.RedScreen();
                 Instantiate(damageEffect,transform.position,Quaternion.identity);
-                //Hit();
+                Hit();
                 
             }
                 
@@ -55,7 +55,7 @@ namespace Battle
         {
             if (collision.gameObject.tag == "EnemyBullet")
             {
-                //HitBullet();
+                HitBullet();
             }
         }
 
