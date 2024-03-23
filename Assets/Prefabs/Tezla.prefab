@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -4011428346994601829}
   m_Layer: 0
   m_Name: Tezla
-  m_TagString: EnemyBullet
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

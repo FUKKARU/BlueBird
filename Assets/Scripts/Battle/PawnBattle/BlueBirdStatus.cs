@@ -48,11 +48,15 @@ namespace Battle
                 Hit();
                 
             }
-            else if(other.gameObject.CompareTag("EnemyBullet"))
+                
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "EnemyBullet")
             {
                 HitBullet();
             }
-                
         }
 
         private void Hit()

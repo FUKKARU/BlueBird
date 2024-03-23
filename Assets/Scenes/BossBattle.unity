@@ -642,6 +642,95 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &536595215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 536595216}
+  - component: {fileID: 536595219}
+  - component: {fileID: 536595218}
+  - component: {fileID: 536595217}
+  m_Layer: 5
+  m_Name: LightningColorImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &536595216
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536595215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1769479837}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &536595217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536595215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &536595218
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536595215}
+  m_CullTransparentMesh: 1
+--- !u!114 &536595219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536595215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e98433d687bb5c4ea9ca891beb8a7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightningImg: {fileID: 536595217}
 --- !u!1 &541909916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,6 +1330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ff76487d78a4e14abf19e27ff5a9653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effHit: {fileID: 8503041884853336, guid: aaf548ae9ac67c649bdeb0fa385ef7b3, type: 3}
   gollira: {fileID: 1796038246}
   gollira_startPos: {fileID: 115821795}
   gollira_endPos: {fileID: 333323072}
@@ -1251,6 +1341,7 @@ MonoBehaviour:
   youseiSE: {fileID: 8300000, guid: 07b857b9ae6b33340aa754e8c2ef0ea1, type: 3}
   lightning: {fileID: 481223535}
   lightningSE: {fileID: 8300000, guid: 0566a1bb1d68f2a45b8ede71a8713b3c, type: 3}
+  yellowImage: {fileID: 536595219}
   curve:
     serializedVersion: 2
     m_Curve:
@@ -1729,7 +1820,7 @@ Transform:
   m_GameObject: {fileID: 1405552940}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.4, y: 0, z: 0}
+  m_LocalPosition: {x: -19.72, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1848,6 +1939,7 @@ RectTransform:
   m_Children:
   - {fileID: 1040497411}
   - {fileID: 1219344085}
+  - {fileID: 536595216}
   - {fileID: 446569874}
   - {fileID: 62320971}
   - {fileID: 1143056978}

@@ -15,10 +15,6 @@ namespace Battle
             dy = Mathf.Sin(angle) * speed;
         }
 
-        private void Awake()
-        {
-            gameObject.layer = LayerMask.NameToLayer("Bullet");
-        }
 
         void Update()
         {
@@ -34,7 +30,8 @@ namespace Battle
 
         }
 
-        void OnCollisionEnter2D(Collision2D collision)
+
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.tag == "BlueBird")
             {
@@ -42,7 +39,6 @@ namespace Battle
                 Destroy(gameObject);
             }
         }
-
 
         void ActiveRegion() { if (transform.position.x > 10 || transform.position.y > 10 || transform.position.y < -10) Destroy(gameObject); }
     }

@@ -22,6 +22,8 @@ namespace Battle
         [NonSerialized] public bool specialActionGollira = false;//true‚ÌƒSƒŠƒ‰‚ª˜r‚ğU‚Á‚ÄŠâ‚ğ“Š‚°‚é
         bool onSpecialAttack = false;
 
+        [SerializeField] GameObject effHit;
+
 
         [SerializeField] GameObject gollira;
         [SerializeField] Transform gollira_startPos;
@@ -35,6 +37,7 @@ namespace Battle
 
         [SerializeField] GameObject lightning;
         [SerializeField] AudioClip lightningSE;
+        [SerializeField] YellowImage yellowImage;
         bool SE_Happend = false;
 
         [SerializeField] AnimationCurve curve;
@@ -56,7 +59,7 @@ namespace Battle
         {
             if (!onAttack)
             {
-                int rand = UnityEngine.Random.Range(0,1);
+                int rand = UnityEngine.Random.Range(2,3);
                 if (rand == 0) attacker = ATTACKER.GOLLIRA;
                 else if (rand == 1) attacker = ATTACKER.YOUSEI;
                 else if (rand == 2) attacker = ATTACKER.LIGHTNING;
@@ -99,6 +102,7 @@ namespace Battle
                         {
                             lightning.GetComponent<SpriteRenderer>().color = new Color(1, 0.9408277f, 0.5440251f, 1);
                             aS.PlayOneShot(lightningSE);
+                            yellowImage.YellowScreen();
                             SE_Happend = true;
 
                         }
@@ -108,6 +112,7 @@ namespace Battle
                         {
                             if (enemy.transform.position.x > -8.4)
                             {
+                                Instantiate(effHit, enemy.transform.position, Quaternion.identity);
                                 Destroy(enemy);
                             }
                         }

@@ -12,10 +12,6 @@ public class Gollira_RockMov : MonoBehaviour
     [SerializeField] GameObject hitEffect;
     GameObject Oya;
 
-    private void Awake()
-    {
-        gameObject.layer = LayerMask.NameToLayer("Rock");
-    }
 
     void Start()
     {
@@ -68,6 +64,10 @@ public class Gollira_RockMov : MonoBehaviour
             if (camera != null) camera.GetComponent<ScreenShake>().ShakeOn();
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+        }
+        else if(collision.gameObject.tag == "Enemy")
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
         }
     }
 
