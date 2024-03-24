@@ -41,7 +41,7 @@ namespace Battle
                 return;
 
 
-            if (Vector3.Distance(transform.position, blueBird.transform.position) < 3.5f  && !isReach)
+            if (Vector3.Distance(transform.position, blueBird.transform.position) < 3.5f  && !isReach && transform.position.x > -8.4f)
             {
 
                 if (!shootEnabled)
