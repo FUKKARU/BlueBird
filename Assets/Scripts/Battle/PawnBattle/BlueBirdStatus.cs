@@ -8,6 +8,9 @@ namespace Battle
 {
     public class BlueBirdStatus : MonoBehaviour
     {
+        [SerializeField] GameObject FixedJoystick;
+        [SerializeField] GameObject TweetButton;
+        [SerializeField] GameObject Timer;
         [SerializeField] Slider hp_slider;
         [SerializeField] Slider hp_hit_slider;
         [SerializeField] Slider hp_heal_slider;
@@ -36,6 +39,9 @@ namespace Battle
             //Debug.Log("input_HP " + input_HP);
             if (hp <= 0)
             {
+                if (FixedJoystick) FixedJoystick.SetActive(false);
+                if (TweetButton) TweetButton.SetActive(false);
+                if (Timer) Timer.SetActive(false);
                 gameObject.SetActive(false);
                 Time.timeScale = 0f;
                 DeadMenu.SetActive(true);

@@ -1885,8 +1885,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1944,8 +1944,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -332.7, y: 174.8}
-  m_SizeDelta: {x: 309.11, y: 50}
+  m_AnchoredPosition: {x: 0, y: 250}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1200295005
 GameObject:
@@ -2531,12 +2531,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
   m_PrefabInstance: {fileID: 1369753450}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1369753453}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1369753453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+  m_PrefabInstance: {fileID: 1369753450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1415150513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3343,7 +3348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c15593d56c5b7344aa9bd2d221171662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisSceneName: PawnBattle_noTweet
+  thisSceneName: PawnBattle_Tweet
 --- !u!1001 &1847800175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3441,6 +3446,10 @@ PrefabInstance:
       value: BlueBird_New
       objectReference: {fileID: 0}
     - target: {fileID: 8279115235738268970, guid: 43d046d58d293a44cb6d1fa5156387ed, type: 3}
+      propertyPath: Timer
+      value: 
+      objectReference: {fileID: 1163072081}
+    - target: {fileID: 8279115235738268970, guid: 43d046d58d293a44cb6d1fa5156387ed, type: 3}
       propertyPath: DeadMenu
       value: 
       objectReference: {fileID: 1845534256}
@@ -3448,6 +3457,14 @@ PrefabInstance:
       propertyPath: redImage
       value: 
       objectReference: {fileID: 214266575}
+    - target: {fileID: 8279115235738268970, guid: 43d046d58d293a44cb6d1fa5156387ed, type: 3}
+      propertyPath: TweetButton
+      value: 
+      objectReference: {fileID: 1650867606}
+    - target: {fileID: 8279115235738268970, guid: 43d046d58d293a44cb6d1fa5156387ed, type: 3}
+      propertyPath: FixedJoystick
+      value: 
+      objectReference: {fileID: 1369753453}
     - target: {fileID: 9021837048779805924, guid: 43d046d58d293a44cb6d1fa5156387ed, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

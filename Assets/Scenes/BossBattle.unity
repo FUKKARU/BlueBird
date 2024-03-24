@@ -797,6 +797,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
   m_PrefabInstance: {fileID: 446569873}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &446569875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+  m_PrefabInstance: {fileID: 446569873}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &464108047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2046,7 +2051,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
   m_PrefabInstance: {fileID: 446569873}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 446569875}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
@@ -2086,8 +2091,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -332.7, y: 174.8}
-  m_SizeDelta: {x: 309.11, y: 50}
+  m_AnchoredPosition: {x: 0, y: 250}
+  m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1163484197
 MonoBehaviour:
@@ -2143,8 +2148,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3092,7 +3097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c15593d56c5b7344aa9bd2d221171662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisSceneName: PawnBattle_noTweet
+  thisSceneName: BossBattle
 --- !u!1 &2053814887
 GameObject:
   m_ObjectHideFlags: 0
@@ -3422,13 +3427,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbf571ffdb7ae83498f9344b40c5f2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FixedJoystick: {fileID: 446569875}
+  TweetButton: {fileID: 1143056977}
+  Timer: {fileID: 1163484195}
   hp_slider: {fileID: 796213061737287640}
   hp_hit_slider: {fileID: 3179618887306981429}
   hp_heal_slider: {fileID: 2468658642936398111}
   maxHP: 100
   redImage: {fileID: 1040497414}
   damageEffect: {fileID: 9111804918293446174, guid: 78e55f8bc8d7c4544ba3db54196f48ae, type: 3}
-  DeadMenu: {fileID: 0}
+  DeadMenu: {fileID: 2025170389}
 --- !u!224 &1402297503738739964
 RectTransform:
   m_ObjectHideFlags: 0
