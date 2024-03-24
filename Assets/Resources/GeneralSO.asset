@@ -18,7 +18,7 @@ MonoBehaviour:
   BGM:
     Group: {fileID: -5038723682350125804, guid: bcaaf0cac0c5a4346a035855c6552488, type: 2}
     TitleBGM:
-      Clip: {fileID: 8300000, guid: 567500beec509b5488ffed6ccdf7b730, type: 3}
+      Clip: {fileID: 8300000, guid: 8fe321465533bbd47b5b167f7dfd5084, type: 3}
       DefaultSoundVolume: 0.25
     PawnBattleBeforeBGM:
       Clip: {fileID: 8300000, guid: c1023e9041d7bf248841cf3aaeba3815, type: 3}
