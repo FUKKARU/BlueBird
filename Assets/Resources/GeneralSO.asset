@@ -16,40 +16,42 @@ MonoBehaviour:
   minVolume: -10
   maxVolume: 10
   BGM:
+    Group: {fileID: -5038723682350125804, guid: bcaaf0cac0c5a4346a035855c6552488, type: 2}
     TitleBGM:
-      clip: {fileID: 8300000, guid: 567500beec509b5488ffed6ccdf7b730, type: 3}
+      Clip: {fileID: 8300000, guid: 567500beec509b5488ffed6ccdf7b730, type: 3}
       DefaultSoundVolume: 0.25
     PawnBattleBeforeBGM:
-      clip: {fileID: 8300000, guid: c1023e9041d7bf248841cf3aaeba3815, type: 3}
+      Clip: {fileID: 8300000, guid: c1023e9041d7bf248841cf3aaeba3815, type: 3}
       DefaultSoundVolume: 0.25
     PawnBattleAfterBGM:
-      clip: {fileID: 8300000, guid: 567500beec509b5488ffed6ccdf7b730, type: 3}
+      Clip: {fileID: 8300000, guid: 567500beec509b5488ffed6ccdf7b730, type: 3}
       DefaultSoundVolume: 0.25
     BossBattleBGM:
-      clip: {fileID: 8300000, guid: 567500beec509b5488ffed6ccdf7b730, type: 3}
+      Clip: {fileID: 8300000, guid: 567500beec509b5488ffed6ccdf7b730, type: 3}
       DefaultSoundVolume: 1
     TalkBGM:
-      clip: {fileID: 8300000, guid: cf6cf767ea2d69d4b8f02a98f793b360, type: 3}
+      Clip: {fileID: 8300000, guid: cf6cf767ea2d69d4b8f02a98f793b360, type: 3}
       DefaultSoundVolume: 0.1
   SE:
+    Group: {fileID: 1261582804536640220, guid: bcaaf0cac0c5a4346a035855c6552488, type: 2}
     ExplosionSE:
-      clip: {fileID: 8300000, guid: a1cfd62e8099ed24f927d2b524776e9f, type: 3}
+      Clip: {fileID: 8300000, guid: a1cfd62e8099ed24f927d2b524776e9f, type: 3}
       DefaultSoundVolume: 0.25
     GameOverSE:
-      clip: {fileID: 8300000, guid: 621aa978efe8bb54f950dc369eeff7b4, type: 3}
+      Clip: {fileID: 8300000, guid: 621aa978efe8bb54f950dc369eeff7b4, type: 3}
       DefaultSoundVolume: 1
     OnPawnBattleEnemyStartAttackSE:
-      clip: {fileID: 8300000, guid: 42420a80f8c79b44093f39848eee08ef, type: 3}
+      Clip: {fileID: 8300000, guid: 42420a80f8c79b44093f39848eee08ef, type: 3}
       DefaultSoundVolume: 0.25
     OnPawnBattleHitSE:
-      clip: {fileID: 8300000, guid: 4a0d0ad6549f96d48a2c1e88b7969466, type: 3}
+      Clip: {fileID: 8300000, guid: 4a0d0ad6549f96d48a2c1e88b7969466, type: 3}
       DefaultSoundVolume: 0.5
     OnBossBattleEnemyStartAttackSE:
-      clip: {fileID: 8300000, guid: aaa2d4fd9796afa4c904e5f9222ffec0, type: 3}
+      Clip: {fileID: 8300000, guid: aaa2d4fd9796afa4c904e5f9222ffec0, type: 3}
       DefaultSoundVolume: 0.25
     OnBossBattleHitSE:
-      clip: {fileID: 8300000, guid: 4a0d0ad6549f96d48a2c1e88b7969466, type: 3}
+      Clip: {fileID: 8300000, guid: 4a0d0ad6549f96d48a2c1e88b7969466, type: 3}
       DefaultSoundVolume: 0.5
     OnTalkCaptionSE:
-      clip: {fileID: 8300000, guid: 41eaf4c2cee9d88459020d98c8b55fe9, type: 3}
-      DefaultSoundVolume: 0.25
+      Clip: {fileID: 8300000, guid: 41eaf4c2cee9d88459020d98c8b55fe9, type: 3}
+      DefaultSoundVolume: 0.1

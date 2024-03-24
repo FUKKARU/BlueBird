@@ -4,23 +4,23 @@ using UnityEngine;
 
 namespace Talk
 {
-    [CreateAssetMenu(menuName = "SO/Talk/Scene", fileName = "SceneSO")]
-    public class SceneSO : ScriptableObject
+    [CreateAssetMenu(menuName = "SO/Talk", fileName = "TalkSO")]
+    public class TalkSO : ScriptableObject
     {
         #region QOL向上処理
         // 保存してある場所のパス
-        public const string PATH = "Talk/SceneSO";
+        public const string PATH = "TalkSO";
 
         // 実体
-        private static SceneSO _entity;
-        public static SceneSO Entity
+        private static TalkSO _entity;
+        public static TalkSO Entity
         {
             get
             {
                 // 初アクセス時にロードする
                 if (_entity == null)
                 {
-                    _entity = Resources.Load<SceneSO>(PATH);
+                    _entity = Resources.Load<TalkSO>(PATH);
 
                     // ロード出来なかった場合はエラーログを表示
                     if (_entity == null)
@@ -39,18 +39,20 @@ namespace Talk
         [Header("新しい行を表示し始めて何秒経ったらスキップ可能にするか")] public float SkipTime;
         [Header("スキップの入力を、何秒ごとに受け付けるか")] public float SkipInterval;
         [Header("文字送りのSE")] public AudioClip CaptionSE;
+        [Header("フェードアウトを開始してからシーン切り替えまでの秒数")] public float FadeOutDuration;
 
-        public string GetText(string sceneName)
+        public TextTable GetTextTable(string sceneName)
         {
             foreach (TextTable textTable in Texts)
             {
                 if (textTable.SceneName == sceneName)
                 {
-                    return textTable.Text;
+                    return textTable;
                 }
             }
 
-            return "テキストの取得失敗";
+            Debug.LogError("<color=red>テキストの取得失敗</color>");
+            return null;
         }
     }
 
@@ -58,6 +60,7 @@ namespace Talk
     public class TextTable
     {
         [Header("シーン名")] public string SceneName;
+        [Header("表示が終わったらどのシーンに遷移するか")] public string ToSceneName;
         [Header("テキスト")][TextArea(1, 1000)] public string Text;
     }
 }

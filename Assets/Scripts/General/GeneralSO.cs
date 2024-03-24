@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
 
 namespace General
 {
@@ -47,6 +48,7 @@ namespace General
     [Serializable]
     public class BGMTable
     {
+        [Header("グループ")] public AudioMixerGroup Group;
         [Header("タイトルのBGM")] public AudioInfoTable TitleBGM;
         [Header("雑魚戦前半のBGM")] public AudioInfoTable PawnBattleBeforeBGM;
         [Header("雑魚戦後半のBGM")] public AudioInfoTable PawnBattleAfterBGM;
@@ -57,6 +59,7 @@ namespace General
     [Serializable]
     public class SETable
     {
+        [Header("グループ")] public AudioMixerGroup Group;
         [Header("爆発SE")] public AudioInfoTable ExplosionSE;
         [Header("ゲームオーバーになったSE")] public AudioInfoTable GameOverSE;
         [Header("雑魚戦：敵が攻撃をするSE")] public AudioInfoTable OnPawnBattleEnemyStartAttackSE;
@@ -69,7 +72,7 @@ namespace General
     [Serializable]
     public class AudioInfoTable
     {
-        [Header("音源ファイル")] public AudioClip clip;
+        [FormerlySerializedAs("clip")][Header("音源ファイル")] public AudioClip Clip;
         [Header("音量"), Range(0, 1)] public float DefaultSoundVolume;
     }
 }

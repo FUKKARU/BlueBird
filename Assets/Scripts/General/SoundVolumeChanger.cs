@@ -19,17 +19,15 @@ namespace Talk
         {
             min = GeneralSO.Entity.minVolume;
             max = GeneralSO.Entity.maxVolume;
-            float defaultVolume = (min + max) / 2;
-            GeneralSO.Entity.AudioMixer.SetFloat(soundType.ToString() + "Param", defaultVolume);
 
             slider = GetComponent<Slider>();
-            slider.value = (slider.minValue + slider.maxValue) / 2;
+            GeneralSO.Entity.AudioMixer.GetFloat(soundType.ToString() + "Param", out float nowVolume);
+            slider.value = (slider.maxValue - slider.minValue) / (max - min) * (nowVolume - min) + slider.minValue;
         }
 
         void Update()
         {
-            float value = slider.value;
-            float volume = (max - min) / 10 * value + min;
+            float volume = (max - min) / (slider.maxValue - slider.minValue) * (slider.value - slider.minValue) + min;
             GeneralSO.Entity.AudioMixer.SetFloat(soundType.ToString() + "Param", volume);
         }
     }
