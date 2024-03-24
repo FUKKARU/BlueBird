@@ -65,10 +65,14 @@ namespace Battle
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.tag == "EnemyBullet" || collision.gameObject.tag == "Razer")
+            if (collision.gameObject.tag == "EnemyBullet")
             {
                 HitBullet();
 
+            }
+            else if (collision.gameObject.tag == "Razer")
+            {
+                RazerHitt();
             }
         }
 
@@ -90,6 +94,14 @@ namespace Battle
             timer = 0;
         }
 
+        private void RazerHitt()
+        {
+            hp -= 10f;
+            input_HP -= 10f;
+            hp_slider.value = hp / maxHP;
+            hp_heal_slider.value = hp / maxHP;
+            timer = 0;
+        }
         void HealthCont()
         {
             if(input_HP >= maxHP)

@@ -25,7 +25,7 @@ namespace Battle
 
         [SerializeField] GameObject effHit;
 
-
+        [SerializeField] Animator Fukidasi;
         [SerializeField] GameObject gollira;
         [SerializeField] Transform gollira_startPos;
         [SerializeField] Transform gollira_endPos;
@@ -69,16 +69,22 @@ namespace Battle
             }
         }
 
+        IEnumerator Fukidasi_Animator()
+        {
+            yield return new WaitForSeconds(1);
+            Fukidasi.SetBool("button", false);
+        }
         public void Tweet()
         {
             if (!onAttack)
             {
                 if (blueBird != false)
                 {
-
-                    tweetVideo.GetComponent<VideoPlayer>().Play();
+                    Fukidasi.SetBool("button", true);
+                    //tweetVideo.GetComponent<VideoPlayer>().Play();
                     aS.PlayOneShot(tweetVideoSE);
                     Debug.Log("S");
+                    StartCoroutine(Fukidasi_Animator());
                 }
 
                 int rand = UnityEngine.Random.Range(0,3);
