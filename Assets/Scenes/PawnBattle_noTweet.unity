@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 162905442}
   - component: {fileID: 162905441}
   m_Layer: 0
-  m_Name: TimerManager
+  m_Name: TimerManager_PNT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4360e5110d31a5a41a7b31ac2399bf96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountDown: 10
+  CountDown: 120
   SecondCountDown: 125
   ZeroCount: 0
   SceanName: PawnBattleTalk
@@ -1679,8 +1679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -295.9, y: 142.29}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -181, y: 234}
+  m_SizeDelta: {x: 309.11, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1200295005
 GameObject:

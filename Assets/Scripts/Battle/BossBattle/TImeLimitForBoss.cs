@@ -29,7 +29,7 @@ public class TImeLimitForBoss : MonoBehaviour
         CountDown -= Time.deltaTime;
 
         //ŠÔ‚ğ•\¦‚·‚é
-        TimeOverText.text = CountDown.ToString("f0") + "•b";
+        TimeOverText.text = "“¦‚°Ø‚ê! "+CountDown.ToString("f0") + "•b";
 
         //countdown‚ª0ˆÈ‰º‚É‚È‚Á‚½‚Æ‚«
         if (CountDown <= 0)

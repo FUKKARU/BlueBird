@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 162905442}
   - component: {fileID: 162905441}
   m_Layer: 0
-  m_Name: TimerManager
+  m_Name: TimerManager_PT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4360e5110d31a5a41a7b31ac2399bf96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountDown: 10
+  CountDown: 120
   SecondCountDown: 125
   ZeroCount: 0
   SceanName: BossBattleTalk
@@ -1020,6 +1020,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 412989594}
     m_Modifications:
+    - target: {fileID: 434416773936279854, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 897664198670096769, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2590750028830218811, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1117,6 +1125,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6402572794744909125, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147041010662613661, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592256409099684402, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
@@ -1663,8 +1679,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -295.9, y: 142.29}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -181, y: 234}
+  m_SizeDelta: {x: 309.11, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1200295005
 GameObject:
