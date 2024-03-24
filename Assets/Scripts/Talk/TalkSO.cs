@@ -38,8 +38,6 @@ namespace Talk
         [Header("テキストを表示するスピード\n（＝何秒ごとに文字を更新するか）")] public float CharsShowInterval;
         [Header("新しい行を表示し始めて何秒経ったらスキップ可能にするか")] public float SkipTime;
         [Header("スキップの入力を、何秒ごとに受け付けるか")] public float SkipInterval;
-        [Header("文字送りのSE")] public AudioClip CaptionSE;
-        [Header("フェードアウトを開始してからシーン切り替えまでの秒数")] public float FadeOutDuration;
 
         public TextTable GetTextTable(string sceneName)
         {

@@ -43,6 +43,8 @@ namespace General
         [Space(25)]
         [Header("BGM")] public BGMTable BGM;
         [Header("SE")] public SETable SE;
+        [Space(25)]
+        [Header("フェードアウトを開始してからシーン切り替えまでの秒数")] public float FadeOutDuration;
     }
 
     [Serializable]

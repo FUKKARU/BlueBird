@@ -257,9 +257,9 @@ namespace Talk
             {
                 time += Time.deltaTime;
 
-                if (time < TalkSO.Entity.FadeOutDuration)
+                if (time < GeneralSO.Entity.FadeOutDuration)
                 {
-                    float a = time / TalkSO.Entity.FadeOutDuration;
+                    float a = time / GeneralSO.Entity.FadeOutDuration;
                     FadeOutImage.color = new Color(0, 0, 0, a);
 
                     yield return null;
