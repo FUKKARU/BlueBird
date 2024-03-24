@@ -14,6 +14,8 @@ namespace Battle
         [SerializeField] float maxHP;
         [SerializeField] RedImage redImage;
         [SerializeField] GameObject damageEffect;
+        [SerializeField]
+        private GameObject DeadMenu;
         float hp;
         float timer;
 
@@ -24,6 +26,7 @@ namespace Battle
             hp = maxHP;
             input_HP = hp;
             timer = 0;
+            Time.timeScale = 1f;
         }
 
         private void Update()
@@ -32,8 +35,11 @@ namespace Battle
             //Debug.Log("hp " + hp);
             //Debug.Log("input_HP " + input_HP);
             if (hp <= 0)
+            {
                 gameObject.SetActive(false);
-
+                Time.timeScale = 0f;
+                DeadMenu.SetActive(true);
+            }
             hp_hit_slider.value = Mathf.Lerp(hp_hit_slider.value, hp_slider.value, timer);
             hp_slider.value = Mathf.Lerp(hp_slider.value, hp_heal_slider.value, timer);
             timer += 0.01f * Time.deltaTime;
