@@ -20,7 +20,7 @@ public class TimeLimitForPawn : MonoBehaviour
 
     void Start()
     {
-        TweetButton.SetActive(false);
+        //TweetButton.SetActive(false);
     }
     // Update is called once per frame
     void Update()
@@ -34,7 +34,8 @@ public class TimeLimitForPawn : MonoBehaviour
         //countdown‚ª0ˆÈ‰º‚É‚È‚Á‚½‚Æ‚«
         if (CountDown <= 0)
         {
-            
+            SceneManager.LoadScene(SceanName);
+            /*
             TweetButton.SetActive(true);
             CountDown = SecondCountDown;
             ZeroCount += 1;
@@ -42,6 +43,7 @@ public class TimeLimitForPawn : MonoBehaviour
             {               
                 SceneManager.LoadScene(SceanName);
             }
+            */
         }
     }
 }

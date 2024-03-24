@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4360e5110d31a5a41a7b31ac2399bf96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountDown: 120
+  CountDown: 10
   SecondCountDown: 125
   ZeroCount: 0
   SceanName: PawnBattleTalk
@@ -1020,6 +1020,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 412989594}
     m_Modifications:
+    - target: {fileID: 434416773936279854, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 897664198670096769, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2590750028830218811, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1117,6 +1125,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6402572794744909125, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147041010662613661, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592256409099684402, guid: ef009d0f9723cb24a9ee53126f21d2f2, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}

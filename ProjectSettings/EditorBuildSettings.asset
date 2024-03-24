@@ -15,11 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Talk/StartTalk.unity
     guid: 1f44d313f5f118a40b13cbb017dabb77
   - enabled: 1
-    path: Assets/Scenes/PawnBattle_Tweet.unity
-    guid: 4f2b01a1a898a5e4396a9db387c5ee53
+    path: Assets/Scenes/PawnBattle_noTweet.unity
+    guid: 83942513a9695fc43977fd25e9e734e3
   - enabled: 1
     path: Assets/Scenes/Talk/PawnBattleTalk.unity
     guid: b678fb0c870be7643a143ec51868719d
+  - enabled: 1
+    path: Assets/Scenes/PawnBattle_Tweet.unity
+    guid: 4f2b01a1a898a5e4396a9db387c5ee53
   - enabled: 1
     path: Assets/Scenes/BossBattle.unity
     guid: c70eede83c76421488a70ccf54275451

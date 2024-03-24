@@ -335,10 +335,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4360e5110d31a5a41a7b31ac2399bf96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountDown: 120
+  CountDown: 10
   SecondCountDown: 125
   ZeroCount: 0
-  SceanName: PawnBattleTalk
+  SceanName: BossBattleTalk
   TimeOverText: {fileID: 1163072082}
   TweetButton: {fileID: 1650867606}
 --- !u!4 &162905442
