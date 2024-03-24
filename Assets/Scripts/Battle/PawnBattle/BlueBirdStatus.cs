@@ -70,8 +70,8 @@ namespace Battle
 
         private void HitBullet()
         {
-            hp -= 1f;
-            input_HP -= 1f;
+            hp -= 3f;
+            input_HP -= 3f;
             hp_slider.value = hp / maxHP;
             hp_heal_slider.value = hp / maxHP;
             timer = 0;
