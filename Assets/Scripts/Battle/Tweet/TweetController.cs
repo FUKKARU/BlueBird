@@ -71,7 +71,7 @@ namespace Battle
 
         IEnumerator Fukidasi_Animator()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             Fukidasi.SetBool("button", false);
         }
         public void Tweet()
