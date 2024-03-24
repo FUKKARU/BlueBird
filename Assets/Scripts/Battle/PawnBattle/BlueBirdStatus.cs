@@ -65,9 +65,10 @@ namespace Battle
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.tag == "EnemyBullet")
+            if (collision.gameObject.tag == "EnemyBullet" || collision.gameObject.tag == "Razer")
             {
                 HitBullet();
+
             }
         }
 

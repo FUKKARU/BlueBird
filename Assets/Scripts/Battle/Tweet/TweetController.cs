@@ -57,8 +57,17 @@ namespace Battle
         private void Start()
         {
             lightning.GetComponent<SpriteRenderer>().color = new Color(1, 0.9408277f, 0.5440251f, 0);
+
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Tweet();
+                Debug.Log("osita");
+            }
+        }
 
         public void Tweet()
         {
@@ -182,6 +191,8 @@ namespace Battle
 
 
     }
+
+    
 }
 
 
