@@ -32,20 +32,27 @@ namespace Battle
 
         IEnumerator Main_Behaiviour()
         {
-            yield return WaveNBlueBirdAimShot(3, 6);
-            yield return new WaitForSeconds(3f);
-            yield return WaveNShotM(4, 16);
-            yield return new WaitForSeconds(3f);
-            yield return WaveNShotMCurve(3, 6);
-            yield return new WaitForSeconds(3f);
-            yield return ShotNCurve(3, 2);
-            yield return new WaitForSeconds(3f);
+            ShootStart();
+            yield return WaveNBlueBirdAimShot(2, 6);
+            yield return new WaitForSeconds(2f);
+            yield return WaveNShotM(4, 8);
+            yield return new WaitForSeconds(2f);
             yield return WaveNBlueBirdAimShot(4, 6);
             yield return new WaitForSeconds(5f);
-
+            ShootFinish();
             yield break;
         }
 
+        ////////////////////////////////////////////////////////
+        public bool shootRoutineFinish;
+        void ShootStart()
+        {
+            shootRoutineFinish = false;
+        }
+        void ShootFinish()
+        {
+            shootRoutineFinish = true;
+        }
         ///IE///////////////////////////////////////////////////
 
         IEnumerator WaveNShotM(int n, int m)

@@ -14,7 +14,7 @@ namespace Battle
         int index = -1;
         Transform destination;
         bool isSet;
-        bool isReach;
+        bool isReach = false;
         bool shootEnabled = false;
         Tezla_ShootBehaviour tezlaSB;
 
@@ -33,7 +33,7 @@ namespace Battle
 
         private void Update()
         {
-            PropellerMov();
+            //PropellerMov();
             ActiveRegion();
             LimitMovement_T();
 
@@ -41,15 +41,23 @@ namespace Battle
                 return;
 
 
-            if (Vector3.Distance(transform.position, blueBird.transform.position) < 3.5f)
+            if (Vector3.Distance(transform.position, blueBird.transform.position) < 3.5f  && !isReach)
             {
-                isReach = true;
+
                 if (!shootEnabled)
                 {
+                    isReach = true;
                     tezlaSB.Shoot();
                     shootEnabled = true;
                 }
 
+
+
+            }
+            if (tezlaSB.shootRoutineFinish)
+            {
+                shootEnabled = false;
+                isReach = false;
             }
         }
         private void FixedUpdate()
