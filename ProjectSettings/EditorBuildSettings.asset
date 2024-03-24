@@ -24,11 +24,11 @@ EditorBuildSettings:
     path: Assets/Scenes/PawnBattle_Tweet.unity
     guid: 4f2b01a1a898a5e4396a9db387c5ee53
   - enabled: 1
-    path: Assets/Scenes/BossBattle.unity
-    guid: c70eede83c76421488a70ccf54275451
-  - enabled: 1
     path: Assets/Scenes/Talk/BossBattleTalk.unity
     guid: 224cd2b707a8ca14b9054dd00e8f5d32
+  - enabled: 1
+    path: Assets/Scenes/BossBattle.unity
+    guid: c70eede83c76421488a70ccf54275451
   - enabled: 1
     path: Assets/Scenes/Talk/EndTalk.unity
     guid: feeb062e2128b044ea176b3f5bb3da69

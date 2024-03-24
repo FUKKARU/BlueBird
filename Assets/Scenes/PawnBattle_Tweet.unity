@@ -3441,6 +3441,10 @@ PrefabInstance:
       value: BlueBird_New
       objectReference: {fileID: 0}
     - target: {fileID: 8279115235738268970, guid: 43d046d58d293a44cb6d1fa5156387ed, type: 3}
+      propertyPath: DeadMenu
+      value: 
+      objectReference: {fileID: 1845534256}
+    - target: {fileID: 8279115235738268970, guid: 43d046d58d293a44cb6d1fa5156387ed, type: 3}
       propertyPath: redImage
       value: 
       objectReference: {fileID: 214266575}
