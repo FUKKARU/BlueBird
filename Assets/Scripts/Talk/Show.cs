@@ -16,7 +16,7 @@ namespace Talk
         [SerializeField] AudioSource seAs;
         [SerializeField] Image textIcon;
         [SerializeField] Image[] speakerImages;
-        [SerializeField] Image FadeOutImage;
+        [SerializeField] Image fadeOutImage;
         Image targetImage; // 表示するべき立ち絵
         TextMeshProUGUI textComp;
         TextTable textTable;
@@ -25,7 +25,7 @@ namespace Talk
         string[] text;
         int nowRow = 1; // 何行目を表示するか
         int rowLen; // 全部で何行あるか
-        bool isClicked; // クリックされたかどうか
+        bool isClicked = false; // クリックされたかどうか
         bool isOnSkipInterval = false; // スキップの入力のインターバル中かどうか
         bool isClickable = true; // プレイヤーの入力を受け付けるか
         bool isSkipable = false; // テキストをスキップ可能かどうか
@@ -51,7 +51,7 @@ namespace Talk
                 img.enabled = false;
             }
             targetImage = speakerImages[0]; // 適当に
-            FadeOutImage.color = new Color(0, 0, 0, 0);
+            fadeOutImage.color = new Color(0, 0, 0, 0);
 
             bgmAs.playOnAwake = false;
             bgmAs.loop = true;
@@ -260,13 +260,13 @@ namespace Talk
                 if (time < GeneralSO.Entity.FadeOutDuration)
                 {
                     float a = time / GeneralSO.Entity.FadeOutDuration;
-                    FadeOutImage.color = new Color(0, 0, 0, a);
+                    fadeOutImage.color = new Color(0, 0, 0, a);
 
                     yield return null;
                 }
                 else
                 {
-                    FadeOutImage.color = new Color(0, 0, 0, 1);
+                    fadeOutImage.color = new Color(0, 0, 0, 1);
                     SceneManager.LoadScene(textTable.ToSceneName);
 
                     yield break;
