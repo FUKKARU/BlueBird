@@ -27,7 +27,7 @@ MonoBehaviour:
       Clip: {fileID: 8300000, guid: 567500beec509b5488ffed6ccdf7b730, type: 3}
       DefaultSoundVolume: 0.25
     BossBattleBGM:
-      Clip: {fileID: 8300000, guid: 567500beec509b5488ffed6ccdf7b730, type: 3}
+      Clip: {fileID: 8300000, guid: d7635f11903e2544893c01e814dab663, type: 3}
       DefaultSoundVolume: 1
     TalkBGM:
       Clip: {fileID: 8300000, guid: cf6cf767ea2d69d4b8f02a98f793b360, type: 3}
