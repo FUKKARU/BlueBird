@@ -21,15 +21,18 @@ public class TTimeForBeam : MonoBehaviour
     private float Speed = 10f, Count = 83,  When = 1, lot = 0;
     [SerializeField]
     private bool RazerShoot = false;
+    [SerializeField]
+    private AudioSource BeamVoice;
 
 
 
-
+    
 
 
     IEnumerator Start()
-    {
+    { 
         yield return new WaitForSeconds(5);
+        BeamVoice.Play();
         StartCoroutine(NoLimitRazer());
     }
     // Update is called once per frame
@@ -52,6 +55,7 @@ public class TTimeForBeam : MonoBehaviour
 
         }
 
+        
         
         /*
         if (CountDown <= 55f && lot <= Count)
@@ -79,11 +83,13 @@ public class TTimeForBeam : MonoBehaviour
     IEnumerator NoLimitRazer()
     {
         ForMove.SetActive(true);
+        BeamVoice.Play();
         float Lot = 0;
-
+       
         ForMove.transform.rotation = Quaternion.Euler(RotateBefore);
         while (Lot <= 95)
         {
+            
             ForMove.transform.rotation = Quaternion.Euler(0, 0, Lot + RotateBefore.z);
             yield return new WaitForSeconds(0.01f);
             Lot += Speed;
