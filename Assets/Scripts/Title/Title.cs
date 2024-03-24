@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Title : MonoBehaviour
 {
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
     public void Play()
     {
         SceneManager.LoadScene("StartTalk");
