@@ -34,7 +34,7 @@ namespace Battle
             {
 
                 d = 0;
-                if (!hasRockCreatedÅ@&& turnTimes == throwedRockNum && transform.parent.gameObject.transform.position.y < -6.15f)
+                if (!hasRockCreated && turnTimes == throwedRockNum && transform.parent.gameObject.transform.position.y < -6.15f)
                 {
 
                     RockCreate();
@@ -56,11 +56,11 @@ namespace Battle
                 hasRockThrowed = false;
             }
 
-            if(d > 40 && d < 50 && !hasRockThrowed)
+            if (d > 40 && d < 50 && !hasRockThrowed)
             {
                 RockThrow();
                 hasRockThrowed = true;
-                
+
             }
 
             Quaternion rot = Quaternion.AngleAxis(d, transform.forward);
@@ -77,7 +77,7 @@ namespace Battle
         {
             throwedRockNum++;
             string scene = SceneManager.GetActiveScene().name;
-            if (scene == "PawnBattle" || scene == "PawnBattle2")
+            if (scene == "PawnBattle_noTweet" || scene == "PawnBattle_Tweet" )
             {
                 GameObject tezla = FindObjectOfType<Tezla>().gameObject;
                 createdRock.target = tezla;
